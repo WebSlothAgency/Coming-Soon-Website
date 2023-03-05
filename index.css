@@ -121,6 +121,16 @@ html {
     cursor: pointer;
 }
 
+.invert{
+    border-radius: 100%;
+}
+
+.invert:hover{
+    transition: 0.25s;
+    outline: 3px solid #CBC2BA;
+    border-radius: 100%;
+}
+
 .invert rect {
     fill: #CBC2BA;
     transition: 0.5s;
