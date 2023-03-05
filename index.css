@@ -31,10 +31,10 @@
 
 body,
 html {
-    background-color: #FCFCFC;
+    background-color: #CBC2BA;
     height: 100%;
     width: 100%;
-    cursor: none;
+    /* cursor: none; */
     overflow: hidden;
 }
 
@@ -104,7 +104,7 @@ html {
 .qText {
     /* font-size: 1vw; */
     font-size: 32px;
-    color: #CBC2BA;
+    /* color: #CBC2BA; */
 }
 
 .socialContainer {
@@ -128,9 +128,10 @@ html {
     outline: 3px solid #0C0C0C;
 }
 
-.invert:focus {
-    border-radius: 100%;
-    outline: 3px solid #0C0C0C;
+a:focus-visible {
+    outline: none;
+    border: none;
+    transform: scale(1.05);
 }
 
 .invert:hover {
@@ -174,6 +175,11 @@ html {
     mix-blend-mode: difference;
     transition: transform .2s;
 }
+
+.invertSelectionColors::selection {
+    color: var(--color);
+    background-color: var(--background-color);
+  }
 
 
 @media only screen and (max-width: 1600px) {

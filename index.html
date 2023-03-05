@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="invertedcursor"></div>
+    <!-- <div id="invertedcursor"></div> -->
     <div class="container">
         <div class="topContainer">
             <div class="topContent">
@@ -50,15 +50,18 @@
                         d="M52.757 82.9911C53.1188 82.3168 56.2048 84.4564 61.8292 84.5031C67.3089 84.5487 70.3635 82.5675 70.7371 83.2869C71.201 84.1804 67.2405 88.6824 62.2565 88.842C56.7773 89.0175 52.2834 83.8737 52.757 82.9911Z"
                         fill="#131212" />
                 </svg>
-                <h1 class="title chaney">WEBSLOTH.AGENCY</h1>
+                <h1 class="title chaney invertSelectionColors"
+                    style="background-color: rgb(203, 194, 186);color:rgb(12, 12, 12);">WEBSLOTH.AGENCY</h1>
             </div>
         </div>
 
         <div class="lowerContainer">
             <div class="lowerContent">
                 <div class="lowerTextContainer">
-                    <p class="chaney secondTitle">COMING SOON</p>
-                    <p class="basier qText">(Q2 2023)</p>
+                    <p class="chaney secondTitle invertSelectionColors"
+                        style="background-color: rgb(12, 12, 12);color:rgb(203, 194, 186);">COMING SOON</p>
+                    <p class="basier qText invertSelectionColors"
+                        style="background-color: rgb(12, 12, 12);color:rgb(203, 194, 186);">(Q2 2023)</p>
                 </div>
                 <div class="socialContainer">
                     <a href="https://www.instagram.com/websloth/">
@@ -109,22 +112,29 @@
 </html>
 
 <script>
-    document.body.onmousemove = function (e) {
-        setTimeout(() => {
-            document.documentElement.style.setProperty(
-                '--x', (
-                    e.clientX + window.scrollX
-                )
-            + 'px'
-            );
-            document.documentElement.style.setProperty(
-                '--y', (
-                    e.clientY + window.scrollY
-                )
-            + 'px'
-            );
-        }, 25);
-    }
+    document.addEventListener('selectionchange', (e) => {
+        function invert(color) {
+            color = color.replace('rgb(', '');
+            color = color.replace(')', '');
+            color = color.replace('rgba(', '');
+            let colors = color.split(',');
+            let r = colors[0].replace(' ', '');
+            let g = colors[1].replace(' ', '');
+            let b = colors[2].replace(' ', '');
+            let a = (colors.length > 3) ? colors[3].replace(' ', '') : 1;
+            r = ~r & 255;
+            g = ~g & 255;
+            b = ~b & 255;
+            return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + a + ')';
+        }
+        selection = window.getSelection();
+        if (selection.anchorNode) {
+            const parent = selection.anchorNode.parentElement;
+            const style = window.getComputedStyle(parent);
+            parent.style.setProperty('--color', invert(style.color));
+            parent.style.setProperty('--background-color', invert(style.backgroundColor));
+        }
+    });
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-777JQRV268"></script>
 <script>
