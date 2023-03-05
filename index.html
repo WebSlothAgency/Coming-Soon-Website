@@ -9,13 +9,13 @@
 
     <link rel="stylesheet" href="index.css">
     <link rel="canonical" href="https://websloth.agency/">
-    
+
 
     <meta name="description"
         content="Websloth is a cutting-edge web agency dedicated to helping businesses achieve innovation through their online presence. Our team of experts specializes in website design, digital marketing, and custom development solutions to elevate your brand and stay ahead of the competition.">
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow"> 
+    <meta name="robots" content="index, follow">
 </head>
 
 <body>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="socialContainer">
                     <a href="https://www.instagram.com/websloth/">
-                        <svg class="click" width="75" height="75" viewBox="0 0 96 96" fill="none"
+                        <svg class="click invert" width="75" height="75" viewBox="0 0 96 96" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="96" height="96" rx="48" fill="#CBC2BA" />
                             <g clip-path="url(#clip0_262_1691)">
@@ -84,7 +84,7 @@
                     </a>
 
                     <a href="https://www.linkedin.com/company/websloth-agency/">
-                        <svg class="click" width="75" height="75" viewBox="0 0 96 96" fill="none"
+                        <svg class="click invert" width="75" height="75" viewBox="0 0 96 96" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="96" height="96" rx="48" fill="#CBC2BA" />
                             <g clip-path="url(#clip0_262_1693)">
@@ -107,6 +107,42 @@
 
 </html>
 
+<script>
+    const $bigBall = document.querySelector('.cursor__ball--big');
+    const $smallBall = document.querySelector('.cursor__ball--small');
+    const $hoverables = document.querySelectorAll('.hoverable');
+
+    // Listeners
+    document.body.addEventListener('mousemove', onMouseMove);
+    for (let i = 0; i < $hoverables.length; i++) {
+        $hoverables[i].addEventListener('mouseenter', onMouseHover);
+        $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+    }
+
+    // Move the cursor
+    function onMouseMove(e) {
+        TweenMax.to($bigBall, .4, {
+            x: e.pageX - 15,
+            y: e.pageY - 15
+        })
+        TweenMax.to($smallBall, .1, {
+            x: e.pageX - 5,
+            y: e.pageY - 7
+        })
+    }
+
+    // Hover an element
+    function onMouseHover() {
+        TweenMax.to($bigBall, .3, {
+            scale: 4
+        })
+    }
+    function onMouseHoverOut() {
+        TweenMax.to($bigBall, .3, {
+            scale: 1
+        })
+    }
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-777JQRV268"></script>
 <script>
     window.dataLayer = window.dataLayer || [];

@@ -117,9 +117,30 @@ html {
     gap: 25px;
 }
 
-.click:hover{
+.click:hover {
     cursor: pointer;
 }
+
+.invert rect {
+    fill: #CBC2BA;
+    transition: 0.5s;
+}
+
+.invert:hover rect {
+    fill: #0C0C0C;
+    transition: 0.25s;
+}
+
+.invert g path {
+    fill: #0C0C0C;
+    transition: 0.5s;
+}
+
+.invert:hover g path {
+    fill: #CBC2BA;
+    transition: 0.25s;
+}
+
 
 @media only screen and (max-width: 1600px) {
     .title {
