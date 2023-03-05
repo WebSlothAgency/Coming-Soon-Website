@@ -121,11 +121,12 @@ html {
     cursor: pointer;
 }
 
-.invert{
+.invert {
     border-radius: 100%;
+    outline: 3px solid #0C0C0C;
 }
 
-.invert:hover{
+.invert:hover {
     transition: 0.25s;
     outline: 3px solid #CBC2BA;
     border-radius: 100%;
