@@ -1,12 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'basier';
+    src: url('./fonts/basier/basiercircle-medium-webfont.eot');
+    src: url('./fonts/basier/basiercircle-medium-webfont.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/basier/basiercircle-medium-webfont.woff2') format('woff2'),
+        url('./fonts/basier/basiercircle-medium-webfont.woff') format('woff'),
+        url('./fonts/basier/basiercircle-medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'chaney';
+    src: url('./fonts/chaney/chaney-regular-webfont.eot');
+    src: url('./fonts/chaney/chaney-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/chaney/chaney-regular-webfont.woff2') format('woff2'),
+        url('./fonts/chaney/chaney-regular-webfont.woff') format('woff'),
+        url('./fonts/chaney/chaney-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.chaney {
+    font-family: "chaney", sans-serif;
+}
+
+.basier {
+    font-family: "basier", sans-serif;
+}
 
 body,
 html {
     background-color: #FCFCFC;
     height: 100%;
     width: 100%;
-
-    font-family: Montserrat, sans-serif;
 }
 
 * {
@@ -18,77 +45,162 @@ html {
 .container {
     height: 100%;
     width: 100%;
+}
+
+.topContainer {
+    height: 62%;
+    width: 100%;
+    background-color: #CBC2BA;
+}
+
+.topContent {
+    height: 100%;
+    padding-top: 80px;
+    padding-left: 80px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lowerContainer {
+    height: 38%;
+    width: 100%;
+    background-color: #0C0C0C;
+}
+
+.title {
+    font-size: 128px;
+    /* font-size: 5.75vw; */
+    padding-bottom: 5px;
+    color: #0C0C0C;
+}
+
+.lowerContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 80px;
+    padding-top: 25px;
+}
+
+.secondTitle {
+    padding-left: 50px;
+    /* font-size: 2.90vw; */
+    font-size: 64px;
+    color: #CBC2BA;
+}
+
+.lowerTextContainer {
+    display: flex;
+    gap: 35px;
+    width: 100%;
+    height: fit-content;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
 }
 
-.container div img {
-    width: 250px;
-}
-
-.textcontainer {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.textcontainer h1 {
-    font-size: 42px;
-}
-
-.textcontainer p {
-    margin-top: 5px;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.button {
-    width: fit-content;
-    background-color: black;
-
-    margin-top: 25px;
-    padding: 10px 15px;
-    font-weight: 600;
-    transition: 0.1s;
-    color: white;
-    text-decoration: none;
-}
-
-.button:hover {
-    transition: 0.1s;
-    transform: scale(1.025);
+.qText {
+    /* font-size: 1vw; */
+    font-size: 32px;
+    color: #CBC2BA;
 }
 
 .socialContainer {
-    margin-top: 15px;
+    height: 100%;
+    align-self: end;
+    justify-self: end;
+
     display: flex;
-    gap: 15px;
-    align-items: center;
+    align-items: end;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    gap: 25px;
 }
 
-.socialContainer a {
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    background-color: black;
-    padding: 10px 0px;
-    transition: 0.15s;
-    width: 125px;
-    text-align: center;
+.click:hover{
+    cursor: pointer;
 }
 
-.socialContainer a:hover {
-    transform: scale(1.05);
-    transition: 0.15s;
+@media only screen and (max-width: 1600px) {
+    .title {
+        font-size: 96px;
+    }
+
+    .secondTitle {
+        font-size: 48px;
+    }
+
+    .qText {
+        font-size: 24px;
+    }
 }
 
-.personal {
-    color: black;
-    margin-top: 15px;
-    text-decoration: underline;
+@media only screen and (max-width: 1250px) {
+    .title {
+        font-size: 72px;
+    }
+
+    .secondTitle {
+        font-size: 36px;
+    }
+
+    .qText {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .title {
+        font-size: 54px;
+    }
+
+    .secondTitle {
+        font-size: 27px;
+    }
+
+    .qText {
+        font-size: 14;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .topContent svg {
+        width: 100px;
+    }
+
+    .title {
+        font-size: 7vw;
+    }
+
+    .secondTitle {
+        font-size: 4.62vw;
+    }
+
+    .qText {
+        font-size: 3.50vw;
+    }
+
+    .topContent {
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+
+    .lowerContent {
+        padding-left: 0px;
+        padding-top: 15px;
+    }
+
+    .lowerTextContainer {
+        gap: 15px;
+    }
+
+    .socialContainer {
+        padding-right: 30px;
+        padding-bottom: 30px;
+        gap: 15px;
+    }
+
+    .socialContainer svg {
+        width: 50px;
+    }
 }
