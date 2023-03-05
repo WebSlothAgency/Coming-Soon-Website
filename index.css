@@ -34,6 +34,8 @@ html {
     background-color: #FCFCFC;
     height: 100%;
     width: 100%;
+    cursor: none;
+    overflow: hidden;
 }
 
 * {
@@ -150,6 +152,22 @@ html {
 .invert:hover g path {
     fill: #CBC2BA;
     transition: 0.25s;
+}
+
+
+#invertedcursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #CBC2BA;
+    color: #0C0C0C;
+    border-radius: 50%;
+    top: var(--y, 0);
+    left: var(--x, 0);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    mix-blend-mode: difference;
+    transition: transform .2s;
 }
 
 
